@@ -1,28 +1,21 @@
-import React from 'react';//Reactを読み込んでいる
-//画面遷移で使用する{ BrowserRouter, Route, Switch }を'react-router-dom'から読み込んでいる
-//import logo from './logo.svg';
-import './App.css';
-import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
-import home from './home'; //home.js 読込み
-import page2 from './page2'; //page2.js 読込み
+import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-function App() {
-  return (
-    /* Top Page */
-    <div className="App">
-      <BrowserRouter>
-        <h2>i-seiQ Demo</h2>
-          <Link to="/">Go To top </Link>
-          <Link to="/home">Go To Link </Link>
-          <Link to="/page2">Go To page2</Link>
+//screens
+import Default from './screens/Default';
+import Login from './screens/Login';
 
-        <Switch>
-          <Route exact path="/home" component={home} />
-          <Route exact path="/page2" component={page2} />
-        </Switch>
-      </BrowserRouter>
-    </div>
-  );
+class App extends React.Component {
+    render() {
+        return (
+            <BrowserRouter>
+                <Switch>
+                    <Route exact path="/login" component={Login} />
+                    <Route path="/" component={Default} />
+                </Switch>
+            </BrowserRouter>
+        );
+    }
 }
 
 export default App;
