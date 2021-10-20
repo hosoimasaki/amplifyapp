@@ -45,9 +45,9 @@ const styles = {
         height: 50,
         background: "#32cd32",
         color: "white",
-        font: "strong",
+        //font: "strong",
         padding: 0, //中央寄せ
-        fontWeight: "800",
+        fontWeight: "600",
         fontSize: 30,
     },
     main: {
